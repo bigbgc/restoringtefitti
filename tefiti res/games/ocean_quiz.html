@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html><head><title>Ocean Quiz</title>
+<style>
+    body { background: #e0f7fa; font-family: Arial; padding: 20px; text-align: center; }
+    .question { margin-bottom: 20px; }
+    button { margin-top: 10px; padding: 10px 20px; }
+</style>
+</head><body>
+<h1>Ocean Awareness Quiz</h1>
+<div class="question">
+    <p>What percentage of Earth's surface is covered by oceans?</p>
+    <button onclick="checkAnswer(this, true)">About 70%</button><br>
+    <button onclick="checkAnswer(this, false)">About 30%</button><br>
+    <button onclick="checkAnswer(this, false)">About 50%</button>
+</div>
+<div class="question">
+    <p>Which item is most harmful to marine life?</p>
+    <button onclick="checkAnswer(this, false)">Banana Peel</button><br>
+    <button onclick="checkAnswer(this, true)">Plastic Bag</button><br>
+    <button onclick="checkAnswer(this, false)">Paper</button>
+</div>
+<script>
+    function checkAnswer(btn, isCorrect) {
+        if (isCorrect) {
+            btn.style.backgroundColor = '#a5d6a7';
+            alert("Correct!");
+        } else {
+            btn.style.backgroundColor = '#ef9a9a';
+            alert("Try Again.");
+        }
+    }
+</script>
+</body></html>

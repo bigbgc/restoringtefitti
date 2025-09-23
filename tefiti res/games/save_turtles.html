@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html><head><title>Save the Turtles</title>
+<style>
+    body { background: #b2ebf2; font-family: Arial; text-align: center; }
+    canvas { border: 2px solid #006064; background: #e0f7fa; display: block; margin: auto; }
+</style>
+</head><body>
+<h1>Save the Turtles🐢</h1>
+<canvas id="gameCanvas" width="400" height="400"></canvas>
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    let turtle = { x: 200, y: 350, size: 20 };
+    let plastic = { x: Math.random() * 380, y: 0, size: 20 };
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') turtle.x -= 10;
+        if (e.key === 'ArrowRight') turtle.x += 10;
+    });
+    function draw() {
+        ctx.clearRect(0, 0, 400, 400);
+        ctx.fillStyle = 'green'; ctx.fillRect(turtle.x, turtle.y, turtle.size, turtle.size);
+        ctx.fillStyle = 'gray'; ctx.fillRect(plastic.x, plastic.y, plastic.size, plastic.size);
+        plastic.y += 2;
+        if (plastic.y > 400) { plastic.y = 0; plastic.x = Math.random() * 380; }
+        if (plastic.y + 20 >= turtle.y && plastic.x >= turtle.x && plastic.x <= turtle.x + 20) {
+            alert("Oh no! The turtle hit the plastic!"); plastic.y = 0; plastic.x = Math.random() * 380;
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+</script>
+</body></html>

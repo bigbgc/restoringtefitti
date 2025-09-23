@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html><head><title>Trash Sorting Game</title>
+<style>
+    body { font-family: Arial; background-color: #e0f7fa; padding: 20px; text-align: center; }
+    .item { margin: 10px; padding: 10px; border: 1px solid #000; width: 100px; display: inline-block; cursor: grab; }
+    .bin { border: 2px dashed #004d40; padding: 20px; margin: 10px; min-height: 100px; width: 120px; display: inline-block; }
+    .correct { background-color: #a5d6a7; }
+</style>
+</head><body>
+<h1>Trash Sorting Game</h1>
+<div id="items">
+    <div class="item" draggable="true" data-type="plastic">Plastic Bottle</div>
+    <div class="item" draggable="true" data-type="organic">Banana Peel</div>
+    <div class="item" draggable="true" data-type="metal">Tin Can</div>
+</div>
+<div id="items">
+    <div class="item" draggable="true" data-type="plastic">Plastic Straw</div>
+    <div class="item" draggable="true" data-type="organic">Newspaper</div>
+    <div class="item" draggable="true" data-type="metal">iron rod</div>
+</div>
+<div id="items">
+    <div class="item" draggable="true" data-type="plastic">PVC Pipe</div>
+    <div class="item" draggable="true" data-type="organic">leftover food</div>
+    <div class="item" draggable="true" data-type="metal">copper wire</div>
+</div>
+<div id="bins">
+    <div class="bin" data-type="plastic">Plastic</div>
+    <div class="bin" data-type="organic">Organic</div>
+    <div class="bin" data-type="metal">Metal</div>
+</div>
+<script>
+    const items = document.querySelectorAll('.item');
+    const bins = document.querySelectorAll('.bin');
+    items.forEach(item => {
+        item.addEventListener('dragstart', e => {
+            e.dataTransfer.setData('text', item.dataset.type);
+            e.dataTransfer.setData('id', item.innerText);
+        });
+    });
+    bins.forEach(bin => {
+        bin.addEventListener('dragover', e => e.preventDefault());
+        bin.addEventListener('drop', e => {
+            e.preventDefault();
+            const type = e.dataTransfer.getData('text');
+            const text = e.dataTransfer.getData('id');
+            if (type === bin.dataset.type) {
+                bin.innerHTML += `<div class='item correct'>${text}</div>`;
+            } else {
+                alert("Oops! Wrong bin!");
+            }
+        });
+    });
+</script>
+</body></html>

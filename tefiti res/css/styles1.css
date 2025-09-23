@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: metropolis, sans-serif;
+  color: black;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+}
+.sugbar {
+  
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+}
+h2{
+  padding: 20px;
+  padding-inline: 40px;
+  border: solid black 2px;
+  border-radius: 20px;
+}
+.text {
+  
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+  height: 200px;
+  
+}
+h2{
+  padding: 20px;
+  padding-inline: 40px;
+  border: solid black 2px;
+  border-radius: 20px;
+}
+textarea{
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px;
+  width: 600px;
+  min-width: 350px;
+}
+.btn {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+
+}

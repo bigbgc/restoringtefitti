@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Images</title>
+  <style>
+    body {
+      background-image: url('img/bg1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+      h1{
+        font-family: metropolis, sans-serif;
+        color: white;
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
+    .flex-container {
+      display: flex;
+      justify-content: space-around; /* space between items */
+      flex-wrap: wrap; /* allow wrap on smaller screens */
+      gap: 20px; /* spacing between items */
+    }
+
+    .card {
+      flex: 1 1 200px; /* grow, shrink, min width */
+      max-width: 270px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 35px;
+
+      padding: 10px;
+      background: #f9f9f9;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .card p {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    h1{
+      text-align: center;
+    }
+  
+  </style>
+</head>
+<body>
+
+  <h1>Oceans Affected by Pollution</h1>
+  <div class="flex-container">
+    <div class="card">
+      <img src="img/Layer 1.png" alt="Image 1">
+      <p><h2>Southern Ocean (Antarctic)</h2>
+Comparatively cleaner, but climate change is melting ice, releasing stored pollutants.<br>
+
+Microplastics are now being found in Antarctic waters.<br>
+
+Heavy impact on penguins, krill, seals.
+
+</p>
+    </div>
+    <div class="card">
+      <img src="img/Layer 2.png" alt="Image 2">
+      <p><h2>Arctic Ocean</h2>
+Fastest warming ocean on Earth.<br>
+
+Melting ice releases trapped plastics & chemicals.<br>
+
+Oil drilling & shipping routes bring pollution.<br>
+
+Marine animals (polar bears, seals, whales) highly affected by toxins.</p>
+    </div>
+    <div class="card">
+      <img src="img/Layer 3.png" alt="Image 3">
+      <p><h2>Atlantic Ocean</h2>
+Oil spills (Gulf of Mexico, West Africa).<br>
+
+Plastic pollution from coastal cities (US East Coast, Europe, West Africa).<br>
+
+Coral reef damage in the Caribbean Sea due to warming & pollution.<br>
+
+High shipping traffic → ballast water introduces invasive species.</p>
+    </div>
+    <div class="card">
+      <img src="img/Layer 4.png" alt="Image 4">
+      <p><h2>Pacific Ocean</h2>
+Great Pacific Garbage Patch: The world’s largest collection of floating plastic between Hawaii & California.<br>
+
+High microplastics concentration → harming fish, turtles, seabirds.<br>
+
+Industrial waste & nuclear waste dumping (historically from Japan, US).<br>
+
+Coral reef bleaching in areas like Great Barrier Reef (Australia).</p>
+    </div>
+    <div class="card">
+      <img src="img/Layer 5.png" alt="Image 5">
+      <p><h2>Indian Ocean</h2>
+Plastic waste hotspot (due to poor waste management in South Asia & East Africa).<br>
+
+Oil pollution from Middle East shipping lanes.<br>
+
+Coral bleaching in Maldives, Seychelles, Lakshadweep.<br>
+
+High mercury levels due to industrial waste.</p>
+    </div>
+  </div>
+
+</body>
+</html>
